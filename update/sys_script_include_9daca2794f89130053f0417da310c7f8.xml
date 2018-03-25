@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_107103_scripting.APLogging</api_name>
+        <client_callable>true</client_callable>
+        <description>Lab 11.1 Server side logging script include</description>
+        <name>APLogging</name>
+        <script><![CDATA[function APLoggin(str){
+	this.debug = true;
+	this.debugPrefix = 'AP: ';
+	if (this.debug){
+		gs.log(this.debugPrefix + str);
+	}
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-03-25 14:34:48</sys_created_on>
+        <sys_id>9daca2794f89130053f0417da310c7f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>APLogging</sys_name>
+        <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
+        <sys_update_name>sys_script_include_9daca2794f89130053f0417da310c7f8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-03-25 14:34:48</sys_updated_on>
+    </sys_script_include>
+</record_update>
