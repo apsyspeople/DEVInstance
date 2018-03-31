@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -44,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>458d6eb54f89130053f0417da310c7ea</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Lab 11.1 Script Include Logging Test</sys_name>
         <sys_overrides/>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
@@ -52,7 +52,7 @@
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
         <sys_update_name>sys_script_458d6eb54f89130053f0417da310c7ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-25 14:37:25</sys_updated_on>
+        <sys_updated_on>2018-03-31 08:03:51</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
