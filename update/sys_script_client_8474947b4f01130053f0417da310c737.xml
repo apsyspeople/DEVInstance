@@ -14,12 +14,12 @@
 	//Type appropriate comment here, and begin script below
 	var ga = new GlideAjax('HelloWorld');
 	ga.addParam('sysparm_name', 'alertGreeting');
-	ga.addParam('sysparm_user_name','Anders');	
-	ga.getXML('HelloWorldParse');
+	ga.addParam('sysparm_username',g_user.userName);	
+	ga.getXML(HelloWorldParse);
 	
 	function HelloWorldParse(response){
 		var answerFromXML = response.responseXML.documentElement.getAttribute('answer');
-		g_form.addInfoMessage(answerFromXML);
+		alert(answerFromXML);
 	}
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -28,7 +28,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8474947b4f01130053f0417da310c737</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>HelloWorld Client Script</sys_name>
         <sys_overrides/>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
@@ -36,7 +36,7 @@
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
         <sys_update_name>sys_script_client_8474947b4f01130053f0417da310c737</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-31 08:55:27</sys_updated_on>
+        <sys_updated_on>2018-03-31 12:50:25</sys_updated_on>
         <table>incident</table>
         <type>onLoad</type>
         <ui_type>0</ui_type>
