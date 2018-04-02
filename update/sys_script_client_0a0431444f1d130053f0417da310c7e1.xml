@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0a0431444f1d130053f0417da310c7e1</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Determine First Reminder</sys_name>
         <sys_overrides/>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
         <sys_update_name>sys_script_client_0a0431444f1d130053f0417da310c7e1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-01 18:56:19</sys_updated_on>
+        <sys_updated_on>2018-04-01 19:13:25</sys_updated_on>
         <table>incident</table>
         <type>onLoad</type>
         <ui_type>0</ui_type>

@@ -2,7 +2,7 @@
 <record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
-        <active>false</active>
+        <active>true</active>
         <api_name>x_107103_scripting.DateTimeReminders</api_name>
         <client_callable>true</client_callable>
         <description>Lab 11.3 Extends the AbstractAjaxProcessor class. Returns the date and time 1 day from now.</description>
@@ -11,7 +11,12 @@
 DateTimeReminders.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
 	incReminder : function(){
-		return gs.daysAgo(-1);
+		//return gs.daysAgo(-1);
+		var dtStringGMT = gs.daysAgo(-1);
+		var gdGMT = new GlideDateTime(dtStringGMT);
+		
+		// Present time in users format and timezone
+		return gdGMT.getDisplayValue();
 	},
 	
     type: 'DateTimeReminders'
@@ -20,13 +25,13 @@ DateTimeReminders.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-03-31 14:34:29</sys_created_on>
         <sys_id>f216297f4fc1130053f0417da310c711</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>DateTimeReminders</sys_name>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
-        <sys_policy>read</sys_policy>
+        <sys_policy/>
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
         <sys_update_name>sys_script_include_f216297f4fc1130053f0417da310c711</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-01 18:56:15</sys_updated_on>
+        <sys_updated_on>2018-04-02 06:36:57</sys_updated_on>
     </sys_script_include>
 </record_update>
