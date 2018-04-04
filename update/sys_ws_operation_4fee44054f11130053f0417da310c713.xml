@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>Do it</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	// Get request data
+	var body = request.body.data;
+	
+	// Handle input that for this test is expected to be "firstname lastname" 
+	var nameParts = body.name.split(' ');	
+	var userName = (nameParts[0][0] + nameParts[1][0]).toLower();
+	var newUserValues = {
+		firstname: nameParts[0],
+		lastname:nameParts[1],
+		username: userName,
+		email: userName + '@fabrikam.com'
+	};
+	
+	// Get or create user
+	var gr = new GlideRecord("sys_user");
+	gr.addQuery('user_name', newUserValues.username);
+	gr.query();
+	
+	var userId;
+	if (!gr.next()) {
+		// Create user
+		gr.user_name = newUserValues.username;
+		gr.first_name = newUserValues.firstname;
+		gr.last_name = newUserValues.lastname;
+		gr.email = newUserValues.email;
+		userId = gr.insert();
+	}
+	else {
+		userId = gr.sys_id.getDisplayValue();
+	}
+	
+	// Create Incident with the new user as the caller
+	var grInc = new GlideRecord('incident');
+	grInc.newRecord();
+	grInc.caller_id = userId;
+	grInc.short_description = "Test incident created for '" + body.name + "'";
+	var incidentId = grInc.insert();
+	
+	// Get newly created incident record
+	grInc.initialize();
+	grInc.get(incidentId);
+	grInc.query();
+	grInc.next();
+	
+	// Escalate problem
+	var grPrb = new GlideRecord("problem");
+	grPrb.short_description = grInc.short_description;
+	grPrb.cmdb_ci = grInc.cmdb_ci;
+	grPrb.impact = grInc.impact;
+	grPrb.urgency = grInc.urgency;
+	grPrb.priority = grInc.priority;
+	grPrb.company = grInc.company;
+	grPrb.sys_domain = grInc.sys_domain;
+	var probId = grPrb.insert();
+	
+	grInc.problem_id = probId;
+	grInc.update();
+	
+	return {
+		'user displayname': body.name,
+		username : userName,
+		'incident number' : grInc.getDisplayValue('number'),
+		'problem number': grPrb.getDisplayValue('number')
+	};
+	
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_107103_scripting/helper</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-04 05:40:09</sys_created_on>
+        <sys_id>4fee44054f11130053f0417da310c713</sys_id>
+        <sys_mod_count>65</sys_mod_count>
+        <sys_name>Do it</sys_name>
+        <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
+        <sys_update_name>sys_ws_operation_4fee44054f11130053f0417da310c713</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-04 11:19:32</sys_updated_on>
+        <web_service_definition display_value="Helper">100a09b04f51130053f0417da310c7ef</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
