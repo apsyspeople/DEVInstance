@@ -4,11 +4,11 @@
         <active>false</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description>Lab 11.1</description>
+        <description>Lab 11.4</description>
         <field>assignment_group</field>
         <global>true</global>
         <messages/>
-        <name>Number of Group Members (incident)</name>
+        <name>Number of Group Members (problem)</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
 	if (isLoading || newValue === '') {
@@ -23,25 +23,25 @@
 	
 	function getGroupMembers(response){
 		var answerXML = response.responseXML.documentElement.getAttribute('answer');
-		alert(answerXML);
+		g_form.showFieldMsg('assignment_group', answerXML);
 	}
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-04-02 07:22:21</sys_created_on>
+        <sys_created_on>2018-04-06 12:32:59</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>39f5961c4f55530053f0417da310c772</sys_id>
-        <sys_mod_count>10</sys_mod_count>
-        <sys_name>Number of Group Members (incident)</sys_name>
+        <sys_id>8f940cb54f11130053f0417da310c701</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Number of Group Members (problem)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
-        <sys_update_name>sys_script_client_39f5961c4f55530053f0417da310c772</sys_update_name>
+        <sys_update_name>sys_script_client_8f940cb54f11130053f0417da310c701</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-06 12:51:07</sys_updated_on>
-        <table>incident</table>
+        <sys_updated_on>2018-04-06 12:51:20</sys_updated_on>
+        <table>problem</table>
         <type>onChange</type>
         <ui_type>0</ui_type>
         <view/>
