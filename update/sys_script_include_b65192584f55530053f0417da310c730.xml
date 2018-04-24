@@ -30,19 +30,37 @@ AssignmentGroupUtils.prototype = Object.extendsObject(global.AbstractAjaxProcess
 		return msg;
 	},
 	
+	assignAnalyst: function(){
+		var groupSysId = this.getParameter('sysparm_group_id');
+		
+		var membersArray = [];
+		var membersGr = new GlideRecord('sys_user_grmember');
+		membersGr.addQuery('group.sys_id',groupSysId);
+		membersGr.query();
+		
+		while (membersGr.next()){
+			var member = {};
+			member.sys_id = membersGr.user.sys_id;
+			member.name = membersGr.user.getDisplayValue();
+			membersArray.push(member);
+		}
+		
+		return JSON.stringify(membersArray);		
+	},		
+	
 	type: 'AssignmentGroupUtils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-04-02 07:17:03</sys_created_on>
         <sys_id>b65192584f55530053f0417da310c730</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>AssignmentGroupUtils</sys_name>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
         <sys_update_name>sys_script_include_b65192584f55530053f0417da310c730</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-06 12:33:27</sys_updated_on>
+        <sys_updated_on>2018-04-24 17:43:58</sys_updated_on>
     </sys_script_include>
 </record_update>

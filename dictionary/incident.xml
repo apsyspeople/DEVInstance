@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element attributes="email_client=true,query_hints=true,hasWorkflow=true,live_feed=true" audit="true" extends="task" label="Incident" max_length="40" name="incident" sizeclass="55" text_index="true" type="collection">
+    <element attributes="email_client=true,query_hints=true,hasWorkflow=true,live_feed=true" audit="true" extends="task" label="Incident" max_length="40" name="incident" sizeclass="61" text_index="true" type="collection">
         <element label="First update due" max_length="40" name="x_107103_scripting_first_update_due" type="glide_date_time"/>
     </element>
 </database>
