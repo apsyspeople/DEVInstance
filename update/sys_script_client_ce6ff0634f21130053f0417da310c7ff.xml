@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description>Lab 11.5</description>
@@ -41,7 +41,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ce6ff0634f21130053f0417da310c7ff</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Lab 11.5 Assign Analyst</sys_name>
         <sys_overrides/>
         <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
@@ -49,7 +49,7 @@
         <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
         <sys_update_name>sys_script_client_ce6ff0634f21130053f0417da310c7ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-24 17:39:11</sys_updated_on>
+        <sys_updated_on>2018-04-25 05:50:41</sys_updated_on>
         <table>incident</table>
         <type>onChange</type>
         <ui_type>0</ui_type>
