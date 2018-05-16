@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_flow_snapshot">
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <label_cache>[]</label_cache>
+        <name>Push message to syspeopledemo1</name>
+        <parent_flow display_value="Push message to syspeopledemo1">2dcc262f4f31130053f0417da310c767</parent_flow>
+        <remote_trigger_id/>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-05-07 08:40:07</sys_created_on>
+        <sys_id>0a9872274f71130053f0417da310c734</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Push message to syspeopledemo1</sys_name>
+        <sys_package display_value="Scripting in ServiceNow" source="x_107103_scripting">b7aa2e794fc5130053f0417da310c7c6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Scripting in ServiceNow">b7aa2e794fc5130053f0417da310c7c6</sys_scope>
+        <sys_update_name>sys_hub_flow_snapshot_0a9872274f71130053f0417da310c734</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-05-07 08:40:07</sys_updated_on>
+    </sys_hub_flow_snapshot>
+</record_update>
